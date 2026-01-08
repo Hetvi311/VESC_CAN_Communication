@@ -62,6 +62,18 @@ ExtId = (command << 8) | controller_id;
 - Ensure same baud rate on all CAN nodes
 
 ---
+## 🔧 Debugging Steps:
+
+- Check baudrate is same or not from both transmitting and receiving side.
+- To set baudrate, you have to configure prescaler, TIM_SEGMENT_1 and TIM_SEGMENT_2 according to desired baudrate.
+- Check which FIFO0 and FIFO1 is used in receiving side code and which Rx0 or Rx1 interrupt is enabled in IOC, as Rx0 should  be for FIFO0 and Rx1 should be for FIFO1.
+- Auto retransmission should be enabled from transmitting side as Enabling Auto Retransmission in CAN communication is crucial because it ensures that messages are reliably delivered even in the presence of errors or bus contention.
+- Transmitting and receiving side StdId should be same and between 0x000 and 0x7FF.
+- Check hardware for data is transmitting or not, check voltage on CANH and CANL there should be 2V difference.
+- Check resistance between CANH and CANL that it is 120 ohm.
+- Check how much voltage you are giving to module, according to the IC and module should be given 5V.
+
+---
 A detailed explanation of **CAN protocol and VESC CAN communication** is provided in the PDF below:
 
 📄 **[CAN Communication Details](docs/CAN_COMMUNICATION.pdf)**
