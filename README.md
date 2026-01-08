@@ -61,3 +61,7 @@ ExtId = (command << 8) | controller_id;
 - Enable: RX FIFO interrupt i.e. Auto retransmission
 - Ensure same baud rate on all CAN nodes
 
+---
+A detailed explanation of **CAN protocol and VESC CAN communication** is provided in the PDF below:
+
+📄 **[CAN Communication Details](docs/CAN_COMMUNICATION.pdf)**
