@@ -76,4 +76,4 @@ ExtId = (command << 8) | controller_id;
 ---
 A detailed explanation of **CAN protocol and VESC CAN communication** is provided in the PDF below:
 
-📄 **[CAN Communication Details](docs/CAN_COMMUNICATION.pdf)**
+📄 **[CAN Communication Details](CAN_COMMUNICATION.pdf)**
