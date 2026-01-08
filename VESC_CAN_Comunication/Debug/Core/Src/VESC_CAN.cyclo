@@ -1,10 +1,8 @@
 ../Core/Src/VESC_CAN.cpp:3:1:VESC::VESC(CAN_HandleTypeDef*, uint8_t)	1
-../Core/Src/VESC_CAN.cpp:20:7:float VESC::sendCommand(uint8_t, uint8_t*)	1
-../Core/Src/VESC_CAN.cpp:25:7:float VESC::setRPM(int32_t)	1
-../Core/Src/VESC_CAN.cpp:37:7:float VESC::setPosition(int32_t)	1
-../Core/Src/VESC_CAN.cpp:49:7:float VESC::setCurrent(int32_t)	1
-../Core/Src/VESC_CAN.cpp:63:7:float VESC::setBrakeCurrent(int32_t)	1
-../Core/Src/VESC_CAN.cpp:76:7:float VESC::setHandBrakeCurrent(int32_t)	1
-../Core/Src/VESC_CAN.cpp:90:7:float VESC::setDuty(float)	1
-../Core/Src/VESC_CAN.cpp:105:6:bool VESC::processRxMessage(CAN_RxHeaderTypeDef*, uint8_t*)	4
-../Core/Src/VESC_CAN.cpp:130:19:VESC::StatusData1 VESC::getStatus1()	1
+../Core/Src/VESC_CAN.cpp:17:7:float VESC::sendCommand(uint8_t, uint8_t*)	1
+../Core/Src/VESC_CAN.cpp:22:7:float VESC::setRPM(int32_t)	1
+../Core/Src/VESC_CAN.cpp:34:7:float VESC::setPosition(int32_t)	1
+../Core/Src/VESC_CAN.cpp:46:7:float VESC::setCurrent(int32_t)	1
+../Core/Src/VESC_CAN.cpp:60:7:float VESC::setBrakeCurrent(int32_t)	1
+../Core/Src/VESC_CAN.cpp:73:7:float VESC::setHandBrakeCurrent(int32_t)	1
+../Core/Src/VESC_CAN.cpp:87:7:float VESC::setDuty(float)	1

@@ -12,9 +12,6 @@ controller_id = id;
 TxHeader.IDE = CAN_ID_EXT;
 TxHeader.RTR = CAN_RTR_DATA;
 TxHeader.DLC = 4;
-
-// Initialize status data
-status1 = {0};
 }
 
 float VESC::sendCommand(uint8_t command, uint8_t* data) {
@@ -100,33 +97,4 @@ data[2] = (duty_i >> 8) & 0xFF;
 data[3] = duty_i & 0xFF;
 
 return sendCommand(CMD_SET_DUTY, data);
-}
-
-bool VESC::processRxMessage(CAN_RxHeaderTypeDef* pHeader, uint8_t* pData) {
-    if (pHeader->IDE != CAN_ID_EXT) {
-    }
-    uint8_t id = pHeader->ExtId & 0xFF;
-    uint8_t cmd = (pHeader->ExtId >> 8) & 0xFF;
-
-    if (id != controller_id) {
-        return false;
-    }
-
-    if (cmd == STATUS_1 && pHeader->DLC >= 8) {
-        int32_t erpm = (pData[0] << 24) | (pData[1] << 16) | (pData[2] << 8) | pData[3];
-        int16_t current = (pData[4] << 8) | pData[5];
-        int16_t duty = (pData[6] << 8) | pData[7];
-
-        status1.rpm = (float)erpm;
-        status1.current = (float)current / 10.0f; // Current in Amps
-        status1.duty = (float)duty / 1000.0f; // Duty cycle as a fraction
-
-        return true;
-    }
-
-    return false;
-}
-
-VESC::StatusData1 VESC::getStatus1() {
-    return status1;
 }

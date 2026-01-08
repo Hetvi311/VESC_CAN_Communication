@@ -12,17 +12,9 @@ class VESC{
 public:
 CAN_HandleTypeDef* vesc_hcan;
 CAN_TxHeaderTypeDef TxHeader;
-CAN_RxHeaderTypeDef RxHeader;
 
 uint8_t controller_id;
 uint32_t TxMailbox;
-
-struct StatusData1 {
-    float rpm;
-    float current;
-    float duty;
-};
-StatusData1 status1;
 
 float sendCommand(uint8_t command, uint8_t* data);
 
@@ -36,10 +28,6 @@ float setCurrent(int32_t current);
 float setBrakeCurrent(int32_t brake_current);
 float setHandBrakeCurrent(int32_t handBrake_current);
 float setDuty(float duty);
-
-// Status methods
-bool processRxMessage(CAN_RxHeaderTypeDef* pHeader, uint8_t* pData);
-StatusData1 getStatus1();
 
 // Command definitions
 static const uint8_t CMD_SET_DUTY = 0;
